@@ -8,6 +8,11 @@ function Particle(x, y, r) {
     World.add(world, this.body);
 }
 
+Particle.prototype.isOffScreen = function() {
+    var x = this.body.position.x;
+    return (x < -50 || x > width + 50) 
+}
+
 Particle.prototype.show = function() {
     fill(255);
     stroke(255);
