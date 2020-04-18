@@ -10,8 +10,8 @@ function Plinko(x, y, r) {
   }
   
   Plinko.prototype.show = function() {
-      fill(0, 255, 0);
-      stroke(255);
+      fill(127);
+      stroke(127);
       var pos = this.body.position;
       push();
       translate(pos.x, pos.y);

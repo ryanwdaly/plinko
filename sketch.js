@@ -13,6 +13,7 @@ var rows = 10;
 
 function setup() {
     createCanvas(600, 700);
+    colorMode(HSB);
     engine = Engine.create();
     world = engine.world;
     newParticle();  
@@ -24,7 +25,7 @@ function setup() {
                 x += spacing / 2;
             }
             var y = spacing + i * spacing;
-            var p = new Plinko(x, y, 4);
+            var p = new Plinko(x, y, 10);
             plinkos.push(p);
         }
     }
@@ -51,8 +52,8 @@ function draw() {
     if (frameCount % 60 == 0) {
         newParticle();
     }
-    background(51);
-    Engine.update(engine);
+    background(0, 0, 0);
+    Engine.update(engine, 16.666);
 
     for(var i = 0; i < particles.length; i++){
         particles[i].show(); 
